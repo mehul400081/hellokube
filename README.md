@@ -1,4 +1,4 @@
-This is repository holding hello kubernetes example deployment yml files
+This is repository holds hello kubernetes example deployment yml files
 
 PreRequisites
 
