@@ -1,0 +1,24 @@
+1) updating deployment -  (3 options - kubectl replace deployment, edit deployment, command line parameterization)
+
+
+
+kubectl describe deployment
+kubectl set image deployment <deploymentName> hellokubernetes=<imageName and Tag>  --record
+kubectl rollout history deployment <deploymentName>
+kubectl rollout undo deployment <deploymentName> --to-revision=1
+
+
+
+
+2) scaling - 
+
+kubectl scale deployment <deploymentName> --replicas=5
+
+
+3) View logs
+kubectl logs <pod name>
+
+
+
+3) DNS lookup - 
+kubectl exec <podName> -- nslookup <serviceName>

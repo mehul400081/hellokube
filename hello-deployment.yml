@@ -1,0 +1,35 @@
+#
+# Deployment Declaration
+#
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hellokube-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: hellokubernetes
+    spec:
+      containers:
+      - name: hellokubernetes
+        image: mehul400081/hellokubernetes:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+---
+#
+# Service Declaration
+#
+apiVersion: v1
+kind: Service
+metadata:
+  name: hellokube-service
+spec:
+  type: LoadBalancer
+  selector:
+    name: hellokubernetes
+  ports:
+  - port: 80
+    targetPort: 8080
