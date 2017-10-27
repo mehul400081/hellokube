@@ -20,5 +20,5 @@ kubectl logs <pod name>
 
 
 
-3) DNS lookup - 
+4) DNS lookup - 
 kubectl exec <podName> -- nslookup <serviceName>
